@@ -94,9 +94,9 @@ const SignUp = () => {
           </form>
           <p className="mb-5 text-center">
             New to coffee drinker:
-            <span className="btn btn-outline ml-2 min-h-0 h-8">
-              <Link to="/signin">Sign In</Link>
-            </span>
+            <Link to="/signin" className="btn btn-outline ml-2 min-h-0 h-8">
+              Sign In
+            </Link>
           </p>
         </div>
       </div>

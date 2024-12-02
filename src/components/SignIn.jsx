@@ -78,9 +78,9 @@ const SignIn = () => {
             </div>
             <p className="mt-2 text-center">
               New to coffee drinker:
-              <span className="btn btn-outline ml-2 min-h-0 h-8">
-                <Link to="/signup">Sign up</Link>
-              </span>
+              <Link to="/signup" className="btn btn-outline ml-2 min-h-0 h-8">
+                Sign up
+              </Link>
             </p>
           </form>
         </div>
