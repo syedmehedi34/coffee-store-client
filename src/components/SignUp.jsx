@@ -11,17 +11,17 @@ const SignUp = () => {
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    // console.log("form sign up", email, password);
+    console.log("form sign up", email, password);
 
     createUser(email, password)
       .then((result) => {
-        // console.log("user created at fb", result.user);
+        console.log("user created at fb", result.user);
         const createdAt = result?.user?.metadata?.creationTime;
 
         const newUser = { name, email, createdAt };
 
         // save new user info to the database
-        fetch("http://localhost:5001/users", {
+        fetch("https://coffee-store-server-chi-five.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -31,12 +31,12 @@ const SignUp = () => {
           .then((res) => res.json())
           .then((data) => {
             if (data.insertedId) {
-              // console.log("user created in db");
+              console.log("user created in db");
             }
           });
       })
       .catch((error) => {
-        // console.log("error", error);
+        console.log("error", error);
       });
   };
 

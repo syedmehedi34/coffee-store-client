@@ -18,7 +18,7 @@ const Users = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         // delete from the database
-        fetch(`http://localhost:5001/users/${id}`, {
+        fetch(`https://coffee-store-server-chi-five.vercel.app/users/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

@@ -11,16 +11,16 @@ const SignIn = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    // console.log(email, password);
+    console.log(email, password);
     signInUser(email, password)
       .then((result) => {
-        // console.log(result.user);
+        console.log(result.user);
 
         // update last login time
         const lastSignInTime = result?.user?.metadata?.lastSignInTime;
         const loginInfo = { email, lastSignInTime };
 
-        fetch(`http://localhost:5001/users`, {
+        fetch(`https://coffee-store-server-chi-five.vercel.app/users`, {
           method: "PATCH",
           headers: {
             "content-type": "application/json",
@@ -29,11 +29,11 @@ const SignIn = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            // console.log("sign in info updated in db", data);
+            console.log("sign in info updated in db", data);
           });
       })
       .catch((error) => {
-        // console.log(error);
+        console.log(error);
       });
   };
 
